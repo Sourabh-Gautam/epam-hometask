@@ -1,0 +1,43 @@
+      =====================
+⚡️ Maven Lifecycles in detail⚡️ 
+      =====================
+
+▶️ 1. Lifecycle default/ Build Lifecycle - [validate, initialize, generate-sources, process-sources, 
+
+generate-resources, process-resources, compile, process-classes, 
+
+generate-test-sources, process-test-sources, generate-test-resources, 
+
+process-test-resources, test-compile, process-test-classes, test,
+ 
+prepare-package, package, pre-integration-test, integration-test, 
+
+post-integration-test, verify, install, deploy]
+
+
+---------------------------------------------------------------------------------------------
+
+▶️ 2. Lifecycle clean - [pre-clean, clean, post-clean]
+
+Clean Lifecycle have 3 phases:
+
+1. Pre Clean: In this some process which are required prior to Clean phase are executed.
+
+2. Clean : In this , we actually clean the multiple files in the target folders generated in Previous Build. This can include few temporary files, project JARs, Source files and compiled classes
+This is required so that we get fresh build.
+
+3. Post Clean: In this , few processes executes to finalize cleaning of the Project. 
+
+Here main phase is the Clean phase. Build Lifecycle is used to compile, Execute testcases and create Project JAR.
+
+Means we will clean our project first with mvn clean so that we will get fresh build after running mvn install.
+----------------------------------------------------------------------------------------------
+
+
+▶️ 3. Lifecycle site - [pre-site, site, post-site, site-deploy]
+
+The flow is sequential, phases runs one after another step by step,
+
+Ex-for default lifecycle, it starts with validate, then initialize and so on...
+
+======================================

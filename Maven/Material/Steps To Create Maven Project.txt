@@ -1,0 +1,37 @@
+How to create maven project with maven-archetype-quickstart ?
+----------------------------------------------------------------------------------------------------------
+
+maven-archetype-quickstart is an archetype which generates a sample Maven project:
+
+project
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- java
+    |       `-- $package
+    |           `-- App.java
+    `-- test
+        `-- java
+            `-- $package
+                `-- AppTest.java
+
+
+Step 1 : Install JDK 8 or above and to confirm if it is installed successfully, run the command [ java -version ] in cmd.
+
+Step 2 : Download maven - https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
+
+Step 3 : Unzip the downloaded maven, rename it to Maven and move it into your C derive.
+
+Step 4 : Copy the bin directory path of maven and set it into the path environment variable.
+
+Step 5 : Now to cross check whether maven installed or not, run the command [ mvn -version ] in cmd.
+
+Step 6 : Create a directory where you want to create the maven project and open cmd at that directory.
+
+Step 7 : Run the following command to create maven project : mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+
+Step 8 : Now Maven will start download the required module.
+
+Step 9 : When donwloading done, you will be asked to enter GroupId ( Company Name ) and then ArtifectId ( Project Name ). Provide accordingly.
+
+Step 10 : Then two optional thing maven will also ask i.e. version ( default is 1.0-SNAPSHOT ) and package ( default is Comapany Name ). If you want to set them as default just hit enter. Your maven project now ready.
