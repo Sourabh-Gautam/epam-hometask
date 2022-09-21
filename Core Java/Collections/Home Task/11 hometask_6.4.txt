@@ -1,0 +1,58 @@
+----------------------------------
+Collections Q & A
+----------------------------------
+
+1. Draw Collections Framework Class Diagram
+   
+2. What is HashMap and Map?
+   
+3. Difference between HashMap and HashTable? Can we make hashmap synchronized?
+   
+4. Difference between Vector and ArrayList?
+
+5. What is an Iterator?
+
+6. List vs Set vs Map. Purposes and definitions.
+
+7. Pros and cons of ArrayList and LinkedList
+
+8. TreeSet vs LinkedHashSet
+
+9. What are relationships between equals and hash codes?
+
+10. What are the advantages of ArrayList over arrays ?
+
+11. Principle of storing data in a hashtable
+
+12. Differences between Hashtable, ConcurrentHashMap and Collections.synchronizedMap()
+
+13. How are hash codes computed?
+
+14. Is it possible that hash code is not unique?
+
+15. Can we put two elements with equal hash code to one hash map?
+
+
+16. Iterator and modification of a List. ConcurentModificationException.
+
+17. What is the significance of ListIterator? What is the difference b/w Iterator and ListIterator?
+
+18. What is the Collections API?
+
+19. How can we access elements of a collection?
+
+20. What is the difference between a queue and a stack?
+
+21. What is the Properties class?
+
+22. Which implementation of the List interface provides for the fastest insertion of a new element into the middle of the list?
+
+23. How can we use hashset in collection interface?
+
+25. Can you limit the initial capacity of vector in java?
+
+26. What method should the key class of Hashmap override?
+
+27. What is the difference between Enumeration and Iterator?
+
+28. Collections class and Arrays class

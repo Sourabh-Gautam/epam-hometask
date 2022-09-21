@@ -1,0 +1,5 @@
+1. Create code which displays in console “Hello, NAME”, where NAME is taken from Command line 
+
+2. Create "calculator" which takes two numbers and an operation from the command line and outputs the result of the operation to the console. Add addition, subtraction, multiplication and division.  
+Extra task : provide option for reminder, calcualte percentage 
+

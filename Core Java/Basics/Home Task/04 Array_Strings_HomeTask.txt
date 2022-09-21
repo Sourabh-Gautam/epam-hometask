@@ -1,0 +1,10 @@
+Arrays:
+1. Write a program to find the missing number in integer array of 1 to 100 - 
+2. Write a program to find biggest and smallest number in a array.-
+
+Strings:
+1. write a program to Print duplicate characters from String -
+2. write a program to check if two strings are rotations of each other -
+
+
+Total marks - 
