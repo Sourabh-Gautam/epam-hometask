@@ -1,0 +1,390 @@
+1. Draw Collections Framework Class Diagram
+
+2. What is HashMap and Map?
+
+Basically, a HashMap allows you to store items with identifiers.
+They are stored in a table format with the identifier being hashed
+using a hashing algorithm. Typically they are more efficient to
+retrieve items than search trees. We can get the values with help of
+their keys in Constant time complexity.
+
+A Map is an object that maps keys to values. A map cannot contain
+duplicate keys: Each key can map to at most one value. It models the
+mathematical function abstraction.
+
+3. Difference between HashMap and HashTable? Can we make hashmap
+synchronized?
+
+HashMap is non-synchronized. It is not thread-safe and can’t be
+shared between many threads without proper synchronization code
+whereas Hashtable is synchronized. It is thread-safe and can be
+shared with many threads.
+
+HashMap allows one null key and multiple null values whereas
+Hashtable doesn’t allow any null key or value.
+
+HashMap is generally preferred over HashTable if thread
+synchronization is not needed.
+
+HashMap can be synchronized using the Collections. synchronizedMap( )
+method.
+
+4. Difference between Vector and ArrayList?
+
+1. ArrayList is not synchronized.Vector is synchronized.
+
+2. ArrayList increments 50% of the current array size if the
+
+number of elements exceeds ts capacity.Vector increments 100% means
+doubles the array size if the total number of elements exceeds its
+
+capacity.
+
+3. ArrayList is not a legacy class. It is introduced in JDK
+1.2.Vector is a legacy class.
+
+4, ArrayList is fast because it is non-synchronized. Vector
+
+is slow because it is synchronized, i.e., in a multithreading
+environment, it holds the other threads in a runnable or non-
+runnable state until the current thread releases the lock of the
+object.
+
+5. ArrayList uses the Iterator interface to traverse the
+elements.A Vector can use the Iterator interface or Enumeration
+interface to traverse the elements.
+
+5. What is an Iterator?
+An Iterator is an object that can be used to loop through
+collections, like ArrayList and HashSet. It is called an "iterator"
+because "iterating" is the technical term for looping. To use an
+Iterator, you must import it from the java. util package
+
+6. List vs Set vs Map. Purposes and definitions.
+
+List interface in Java is a sub-interface of the Java collections
+interface. It contains the index-based methods to insert, update,
+delete, and search the elements. It can have duplicate elements
+also. We can also store the null elements in the list. List
+preserves the insertion order, it allows positional access and
+insertion of elements. It found in the java.util package.
+
+The Set follows the unordered way and it found in java.util package
+and extends the collection interface in java. Duplicate item will be
+ignored in Set and it will not print in the final output.
+
+The Java Map interface, java.util.Map represents a mapping between a
+key and a value. More specifically, a Java Map can store pairs of
+keys and values. Each key is linked to a specific value. Once stored
+in a Map, you can later look up the value using just the key.
+
+The list interface allows duplicate elements
+Set does not allow duplicate elements.
+The map does not allow duplicate elements
+
+The list maintains insertion order.
+Set do not maintain any insertion order.
+The map also does not maintain any insertion order.
+
+We can add any number of null values.
+
+But in set almost only one null value.
+
+The map allows a single null key at most and any number of null
+values.
+
+List implementation classes are Array List, LinkedList.
+
+Set implementation classes are HashSet, LinkedHashSet, and TreeSet.
+Map implementation classes are HashMap, HashTable, TreeMap,
+ConcurrentHashMap, and LinkedHashMap.
+
+The list provides get() method to get the element at a specified
+index.
+
+Set does not provide get method to get the elements at a specified
+index
+
+The map does not’ provide get method to get the elements at a
+specified index
+
+7. Pros and cons of ArrayList and LinkedList
+Disadvantages of Array Lists
+1) If a data entry is added to or removed from an
+array-based list, data needs to be shifted to
+
+update the list.
+
+2) In the worst case, for an array-based list with n
+data entries, an add and a remove takes 0(n)
+
+time.
+
+3) Also, all data in the array-based list must be
+stored sequentially in memory. Large lists will
+require significant contiguous blocks of memory.
+
+8. TreeSet vs LinkedHashSet
+
+1) LinkedHashSet uses LinkedHashMap internally to store it’s
+elements.TreeSet uses TreeMap internally to store it’s elements.
+
+2) LinkedHashSet maintains insertion order of elements. i.e elements
+are placed as they are inserted.TreeSet orders the elements
+according to supplied Comparator. If no comparator is supplied,
+elements will be placed in their natural ascending order.
+
+3)The performance of LinkedHashSet is between HashSet and TreeSet.
+It’s performance is almost similar to HashSet. But slightly in the
+slower side as it also maintains LinkedList internally to maintain
+the insertion order of elements. TreeSet gives less performance than
+the HashSet and LinkedHashSet as it has to sort the elements after
+each insertion and removal operations.
+
+4)LinkedHashSet also gives performance of order 0(1) for insertion,
+removal and retrieval operations.TreeSet gives performance of order
+O(log(n)) for insertion, removal and retrieval operations.
+
+9. What are relationships between equals and hash codes?
+
+Every Java object has two very important methods equals() and
+hashCode() and these methods are designed to be overridden according
+to their specific general contract. An Object class is the parent
+class of every class, the default implementation of these two
+methods is already present in each class. However, we can override
+these methods based on the requirement.
+
+hashCode() Method
+
+public int hashCode()
+
+This method returns an integer value, which is referred to as the
+hash code value of an object. Every Object, at the time of creation
+assigned with a unique 32-bit, signed int value. This value is the
+hash code value of that object.
+
+equals() Method
+
+public boolean equals(Object obj)
+
+The equals() method of Object class checks the equality of the
+objects and accordingly it returns true or false. The default
+implementation, as provided by Object class, checks the equality of
+the objects on the basis if both references refer to the same
+object. It does not check the value or state of the objects. But we
+can override this method to provide own implementation to compare
+the state or value of the objects.
+
+10. What are the advantages of ArrayList over arrays ?
+
+Arraylists are dynamic in nature while arrays have fixed size.
+Arraylists have ready made methods to perform particular arrays do
+not have that. These helps Arraylist to become more flexible.
+11. Principle of storing data in a hashtable
+
+A hash table uses a hash function to compute an index, also called a
+hash code, into an array of buckets or slots, from which the desired
+value can be found. During lookup, the key is hashed and the
+resulting hash indicates where the corresponding value is stored.
+
+12. Differences between Hashtable, ConcurrentHashMap and
+Collections. synchronizedMap()
+Hashtable :-
+
+1) Locking Mechanism
+
+Synchronized HashMap and HashTable maintain object level lock. i.e
+the whole map is locked. Only one thread can enter into the map at
+any moment of time and others have to wait for the lock.
+
+But in ConcurrentHashMap, the whole map is not locked. The map is
+divided into number of segments and each segment maintains its own
+lock. Any thread wants to enter into a segment have to acquire that
+segment’s lock.
+
+This number of segments is decided by the parameter called
+Concurrency_Level which is passed while instantiating
+ConcurrentHashMap. By default, it’s value is 16. That means, the map
+is divided into 16 segments and 16 threads can enter into the map at
+at time.
+
+2) Which operations are synchronized?
+
+In synchronized HashMap and HashTable, all operations are
+synchronized. That means, whatever the operation you want to perform
+on the map, whether it is read or update, you have to acquire object
+lock.
+
+But in ConcurrentHashMap, only update operations are synchronized.
+Read operations are not synchronized. That means, any number of
+threads which wants to perform read operations on the map can enter
+into the map without waiting for the lock. Only update operations
+need segment level lock. Read operations don’t need any type of
+lock.
+
+3) How many threads can enter into a map at a time?
+
+Whatever may be the operation, only one thread can enter into a
+synchronized HashMap and Hashtable at any moment of time. Other
+threads have to wait for the lock.
+
+On the other hand, minimum 16 threads can perform update operations
+on ConcurrentHashMap at a time and any number of threads can perform
+read operations at a time without waiting for the lock.
+
+4) Null Keys And Null Values
+
+Synchronized HashMap allows one null key and any number of null
+values.
+
+HashTable and ConcurrentHashMap doesn’t allow even a single null key
+and null values.
+
+5) Nature Of Iterators
+Iterators returned by synchronized HashMap are fail-fast in nature.
+i.e they throw ConcurrentModificationException if the map is
+modified after the creation of iterator.
+
+Iterators returned by HashTable and ConcurrentHashMap are fail-safe
+in nature. i.e they don’t throw ConcurrentModificationException if
+the map is modified after the creation of iterator.
+
+6) When they are introduced?
+
+HashTable was there since JDK 1.1. From JDK 1.2, it has been made a
+part of Java Collection Framework.
+
+HashMap is introduced in JDK 1.2 and ConcurrentHashMap in JDK 1.5.
+
+7) When to use what?
+
+HashTable is the legacy class. It is sometime considered as due for
+deprecation. So, it is recommended that not to use HashTable in your
+applications.
+
+If you want high level of data consistency, then only consider using
+synchronized HashMap. Otherwise, in all the concurrently executing
+multi threaded circumstances, ConcurrentHashMap is the best choice.
+
+13. How are hash codes computed?
+The hashcode value of a String is calculated with the help of a
+formula:
+
+s[@]*31%(n-1) + s[1]*31%(n-2) + ... + s[n-1]
+where:
+
+s[i] represents the ith character of the string
+“ refers to the exponential operand
+n represents the length of the string
+
+14. Is it possible that hash code is not unique?
+
+Yes it is possible.By nature, hash values are not guaranteed to be
+unique. Any system with an arbitrarily large number of possible
+inputs and a limited number of outputs will have collisions.
+
+15. Can we put two elements with equal hash code to one hash map?
+Yes we can put.It's perfectly legal for two unequal objects to have
+the same hash code. It's used by HashMap as a "first pass filter" so
+that the map can quickly find possible entries with the specified
+key. The keys with the same hash code are then tested for equality
+with the specified key.
+
+16. Iterator and modification of a List.
+ConcurentModificationException.
+
+To avoid this error ,
+
+To Avoid ConcurrentModificationException in multi-threaded
+environment
+You can convert the list to an array and then iterate on the array.
+You can lock the list while iterating by putting it ina
+synchronized block.
+
+If you are using JDK1.
+
+17. What is the significance of ListIterator? What is the difference
+b/w Iterator and ListIterator?
+
+Iterator can traverse only in forward direction whereas ListIterator
+traverses both in forward and backward directions. ListIterator can
+help to replace an element whereas Iterator cannot. Can traverse
+elements present in Collection only in the forward direction.
+
+18. What is the Collections API?
+
+A collections API is a unified framework for representing and
+manipulating collections, allowing them to be manipulated
+independent of the details of their representation. The primary
+advantages of a Collections framework are It provides
+interoperability between unrelated APIs
+
+19. How can we access elements of a collection?
+
+Java provides Iterator and ListIterator classes to retrieve the
+elements of the collection object. The hasNext() method of these
+interfaces returns true if the collection object has next element
+else it returns false. The next() methods of the Iterator and
+ListIterator returns the next element of the collection
+
+20. What is the difference between a queue and a stack?
+
+The primary difference between Stack and Queue Data Structures is
+that Stack follows LIFO while Queue follows FIFO data structure
+type. LIFO refers to Last In First Out. It means that when we put
+data in a Stack, it processes the last entry first. Conversely, FIFO
+refers to First In First Out.
+
+21. What is the Properties class?
+
+Properties class is the subclass of Hashtable. It can be used to get
+property value based on the property key. The Properties class
+provides methods to get data from the properties file and store data
+into the properties file. Moreover, it can be used to get the
+properties of a system.
+
+22. Which implementation of the List interface provides for the
+fastest insertion of a new element into the middle of the list?
+
+The LinkedList is implemented using a doubly linked list; an
+insertion requires only the updating of the links at the point of
+insertion. Therefore, the LinkedList allows for fast insertions and
+deletions.
+23. How can we use hashset in collection interface?
+
+Java HashSet class is used to create a collection that uses a hash
+table for storage. It inherits the AbstractSet class and implements
+Set interface. The important points about Java HashSet class are:
+HashSet stores the elements by using a mechanism called hashing.
+
+25. Can you limit the initial capacity of vector in java?
+
+Yes we can,
+
+Default initial capacity of Vector is 10. java. util. Vector default
+constructor defines size of 10.
+
+26. What method should the key class of Hashmap override?
+
+In order to use our own class objects as keys in collections like
+HashMap, Hashtable etc.. , we should override both methods
+
+( hashCode() and equals() ) by having an awareness on internal
+working of collection. Otherwise, it leads to wrong results which we
+are not expected.
+
+27. What is the difference between Enumeration and Iterator?
+Iterator can do modifications (e.g using remove() method it removes
+the element from the Collection during traversal). Enumeration
+interface acts as a read only interface, one can not do any
+modifications to Collection while traversing the elements of the
+Collection.
+
+28. Collections class and Arrays class
+
+Arrays can hold the only the same type of data in its collection i.e
+only homogeneous data types elements are allowed in case of arrays.
+Collection, on the other hand, can hold both homogeneous and
+heterogeneous elements. Arrays can hold both object and primitive
+type data.
+

@@ -1,0 +1,9 @@
+1) Complete watching of section 3 topics 13 videos https://www.udemy.com/java-tutorial/learn/v4/overview
+
+2) Write java code to demonstrate usage of below collections framework class 
+ a) ArrayList b) LinkedList c) HashMap d) LinkedHashMap e) HashSet f) LinkedHashSet g) TreeSet h) TreeMap
+
+
+ 
+3) Write java code to demonstrate usage of custom class objects (example Student/Employee) in HashMap 
+
