@@ -9,11 +9,10 @@ public class MyClass {
 		this.name = name;
 	}
 
-	@Override
-	public int hashCode() {
-		System.out.println("Hashcode invoked");
-		return Objects.hash(name);
-	}
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(name);
+//	}
 
 	@Override
 	public boolean equals(Object obj) {
