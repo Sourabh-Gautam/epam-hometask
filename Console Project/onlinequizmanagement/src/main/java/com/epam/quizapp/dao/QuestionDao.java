@@ -32,7 +32,7 @@ public class QuestionDao {
 			return quiz;
 		}).collect(Collectors.toList());
 		QuizCollection.getInstance().setQuizList(quizList);
-		return getQuestionList(questionId);
+		return getQuestionList(quizId);
 	}
 	
 	public static List<Question> addQuestion(String quizId, Question question) {

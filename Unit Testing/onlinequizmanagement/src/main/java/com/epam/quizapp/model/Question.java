@@ -15,6 +15,10 @@ public class Question {
 		this.optionList = optionList;
 	}
 
+	public Question() {
+
+	}
+
 	public String getId() {
 		return id;
 	}

@@ -20,9 +20,9 @@ public class LoginPage {
 	@Render
 	public void processLoginPage() {
 		LOGGER.info("Now enter your Admin/Student credentails.");
-		System.out.print("Username : ");
+		LOGGER.info("Username : ");
 		String username = ScannerUtility.openScanner().next();
-		System.out.print("Password : ");
+		LOGGER.info("Password : ");
 		String password = ScannerUtility.openScanner().next();
 		
 		RequestData<String, String> requestData = RequestData.getInstance();
@@ -34,7 +34,7 @@ public class LoginPage {
 
 		if(response.getResponseData().getAttribute("userData")!=null) {
 			LOGGER.info("Congratulations ! You have successfully Logged in.");
-			User user = (User)response.getResponseData().getAttribute("userData");
+			User user = response.getResponseData().getAttribute("userData");
 			
 			if(user.getRole().equals("admin")) {
 				Renderer.render(AdminPage.class);
@@ -48,11 +48,10 @@ public class LoginPage {
 		else {
 			LOGGER.info("Sorry, you have to register first.");
 			LOGGER.info("Do you want to continue ? (y/n)");
-			if(ScannerUtility.openScanner().next().toLowerCase().equals("y")) {
+			if(ScannerUtility.openScanner().next().equalsIgnoreCase("y")) {
 				OnlineQuiz.main(null);
 			}
 		}
-		return;
 	}
 	
 	public static LoginPage getInstance() {

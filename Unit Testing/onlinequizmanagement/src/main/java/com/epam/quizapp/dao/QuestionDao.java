@@ -10,6 +10,9 @@ import com.epam.quizapp.model.Question;
 import com.epam.quizapp.model.Quiz;
 
 public class QuestionDao {
+	
+	private QuestionDao() {
+	}
 
 	public static List<Question> getQuestionList(String quizId) {
 		List<Quiz> quizList = QuizCollection.getInstance().getQuizList();
@@ -18,7 +21,7 @@ public class QuestionDao {
 				return quiz.getQuestionList();
 			}
 		}
-		return null;
+		return new ArrayList<>();
 	}
 
 	public static List<Question> deleteQuestion(String quizId, String questionId) {
@@ -31,24 +34,20 @@ public class QuestionDao {
 			}
 			return quiz;
 		}).collect(Collectors.toList());
-		QuizCollection.getInstance().setQuizList(quizList);
-		return getQuestionList(questionId);
+		QuizCollection.setQuizList(quizList);
+		return getQuestionList(quizId);
 	}
 	
 	public static List<Question> addQuestion(String quizId, Question question) {
 		QuizCollection quizCollection = QuizCollection.getInstance();
 		Quiz quiz = quizCollection.getQuiz(quizId);
 		Optional<List<Question>> optionalQuestionList = Optional.ofNullable(quiz.getQuestionList());
-		List<Question> questionList = null;
+		List<Question> questionList = new ArrayList<>();
 		if(optionalQuestionList.isPresent()) {
 			questionList = optionalQuestionList.get();
 			String questionId = String.valueOf(Integer.parseInt(questionList.get(questionList.size()-1).getId())+1);
 			question.setId(questionId);
 		}
-		else {
-			
-		}
-		questionList = new ArrayList<>();
 		questionList.add(question);
 		quiz.setQuestionList(questionList);
 		QuizDao.deleteQuiz(quizId);

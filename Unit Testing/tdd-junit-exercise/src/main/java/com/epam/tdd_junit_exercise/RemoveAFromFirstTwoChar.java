@@ -1,5 +1,7 @@
 package com.epam.tdd_junit_exercise;
 
+//Statement : Remove first two charater if they are A
+
 public class RemoveAFromFirstTwoChar {
 
 	public String remove(String input) {

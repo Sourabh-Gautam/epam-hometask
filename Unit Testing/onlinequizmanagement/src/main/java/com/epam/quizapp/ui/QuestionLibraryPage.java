@@ -1,6 +1,7 @@
 package com.epam.quizapp.ui;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -13,6 +14,8 @@ import com.epam.quizapp.util.ScannerUtility;
 
 public class QuestionLibraryPage {
 	
+	private static final String SEPARATOR = "-------------------------------------------------------------------------";
+	
 	private static final Logger LOGGER = LogManager.getLogger(QuestionLibraryPage.class);
 
 	public List<Question> renderQuestionsForStudent(String quizId) {
@@ -24,45 +27,44 @@ public class QuestionLibraryPage {
 			return questionList;
 		}
 
-		LOGGER.info("-------------------------------------------------------------------------");
+		LOGGER.info(SEPARATOR);
 		int correctAnswerCount = 0;
 		for (int i = 0; i < questionList.size(); i++) {
 			Question question = questionList.get(i);
-			LOGGER.info(question.getId() + ".| " + question.getQuestionStatement() + "");
+			LOGGER.info("{}.| {}", question.getId(), question.getQuestionStatement());
 
-			Option correctOption = null;
+			Option correctOption = new Option();
 
 			List<Option> optionList = question.getOptionList();
 			for (int j = 0; j < optionList.size(); j++) {
 				Option option = optionList.get(j);
 				if (option.isCorrect())
 					correctOption = option;
-				LOGGER.info(option.getId() + ". " + option.getOptionName());
+				LOGGER.info("{}. {}", option.getId(), option.getOptionName());
 			}
 
-			System.out.print("Choose an option : ");
+			LOGGER.info("Choose an option : ");
 			String choseOptionId = ScannerUtility.openScanner().next();
 
-			if (correctOption.getId().toLowerCase().equals(choseOptionId.toLowerCase())) {
+			if (correctOption.getId().equalsIgnoreCase(choseOptionId)) {
 				LOGGER.info("Great ! Answer is correct.");
 				correctAnswerCount++;
 			} else {
-				LOGGER.info("Sorry ! The correct answer is [ " + correctOption.getId() + ". "
-						+ correctOption.getOptionName() + " ]");
+				LOGGER.info("Sorry ! The correct answer is [ {}. {} ] ", correctOption.getId(), correctOption.getOptionName());
 			}
 			try {
 				if (i != questionList.size() - 1) {
 					LOGGER.info("Enter for next question...");
 					System.in.read();
 				} else {
-					LOGGER.info("Quiz Finished ! You scored " + correctAnswerCount + " / " + (i + 1) + "");
+					LOGGER.info("Quiz Finished ! You scored {} / {}", correctAnswerCount, i+1);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			
 		}
-		LOGGER.info("-------------------------------------------------------------------------");
+		LOGGER.info(SEPARATOR);
 		return questionList;
 	}
 
@@ -80,22 +82,22 @@ public class QuestionLibraryPage {
 			}
 		}
 		else {
-			LOGGER.info("-------------------------------------------------------------------------");
+			LOGGER.info(SEPARATOR);
 			for (int i = 0; i < questionList.size(); i++) {
 				Question question = questionList.get(i);
-				LOGGER.info(question.getId() + ".| " + question.getQuestionStatement() + "");
+				LOGGER.info("{}.| {}", question.getId(), question.getQuestionStatement());
 
 				List<Option> optionList = question.getOptionList();
 				for (int j = 0; j < optionList.size(); j++) {
 					Option option = optionList.get(j);
 					if (option.isCorrect()) {
-						LOGGER.info(option.getId() + ". " + option.getOptionName() + " - Correct");					
+						LOGGER.info("{}. {} - Correct", option.getId(), option.getOptionName());					
 					}else {
-						LOGGER.info(option.getId() + ". " + option.getOptionName());					
+						LOGGER.info("{}. {}", option.getId(), option.getOptionName());					
 					}
 				}
 			}
-			LOGGER.info("-------------------------------------------------------------------------");
+			LOGGER.info(SEPARATOR);
 			
 			LOGGER.info("Press 0 - Exit");
 			LOGGER.info("Press 1 - Add Question");
@@ -110,45 +112,46 @@ public class QuestionLibraryPage {
 
 	public List<Question> actionOnQuestion(String action, String quizId) {
 		
+		String correctOptionAskingStmt = "Is is correct option (y/n) : ";
+		
 		QuestionOperation questionOperation = new QuestionOperation();
 		
 		if (action.equals("1")) {
 			// Add Question into quiz
 			
-			System.out.print("Enter question statement : ");
+			LOGGER.info("Enter question statement : ");
 			ScannerUtility.openScanner().nextLine();
 			String questionStatement = ScannerUtility.openScanner().nextLine();
 
 			String correctOption = "";
 			
-			System.out.print("Enter option 1 : ");
+			LOGGER.info("Enter option 1 : ");
 			String option1 = ScannerUtility.openScanner().nextLine();
-			System.out.print("Is is correct option (y/n) : ");
-			if (ScannerUtility.openScanner().nextLine().toLowerCase().equals("y")) {
+			if (ScannerUtility.openScanner().nextLine().equalsIgnoreCase("y")) {
 				correctOption = "1";
 			}
-			System.out.print("Enter option 2 : ");
+			LOGGER.info("Enter option 2 : ");
 			String option2 = ScannerUtility.openScanner().nextLine();
-			System.out.print("Is is correct option (y/n) : ");
-			if (ScannerUtility.openScanner().nextLine().toLowerCase().equals("y")) {
+			LOGGER.info(correctOptionAskingStmt);
+			if (ScannerUtility.openScanner().nextLine().equalsIgnoreCase("y")) {
 				correctOption = "2";
 			}
-			System.out.print("Enter option 3 : ");
+			LOGGER.info("Enter option 3 : ");
 			String option3 = ScannerUtility.openScanner().nextLine();
-			System.out.print("Is is correct option (y/n) : ");
-			if (ScannerUtility.openScanner().nextLine().toLowerCase().equals("y")) {
+			LOGGER.info(correctOptionAskingStmt);
+			if (ScannerUtility.openScanner().nextLine().equalsIgnoreCase("y")) {
 				correctOption = "3";
 			}
-			System.out.print("Enter option 4 : ");
+			LOGGER.info("Enter option 4 : ");
 			String option4 = ScannerUtility.openScanner().nextLine();
-			System.out.print("Is is correct option (y/n) : ");
-			if (ScannerUtility.openScanner().nextLine().toLowerCase().equals("y")) {
+			LOGGER.info(correctOptionAskingStmt);
+			if (ScannerUtility.openScanner().nextLine().equalsIgnoreCase("y")) {
 				correctOption = "4";
 			}
 
 			if(correctOption.isEmpty()) {
 				LOGGER.info("One option should be correct ! Do you want to add again ? (y/n)");
-				if (ScannerUtility.openScanner().nextLine().toLowerCase().equals("y")) {
+				if (ScannerUtility.openScanner().nextLine().equalsIgnoreCase("y")) {
 					actionOnQuestion(action, quizId);
 				}
 			}
@@ -158,7 +161,7 @@ public class QuestionLibraryPage {
 			}
 			
 		} else if (action.equals("2")) {
-			System.out.print("Enter question id : ");
+			LOGGER.info("Enter question id : ");
 			String questionId = ScannerUtility.openScanner().next();
 			if (questionId.isEmpty()) {
 				LOGGER.info("Question id cannot be blank. Try again !");
@@ -172,7 +175,7 @@ public class QuestionLibraryPage {
 			
 		} 
 		renderQuestionsForAdmin(quizId);
-		return null;
+		return new ArrayList<>();
 	}
 
 	public static QuestionLibraryPage getInstance() {

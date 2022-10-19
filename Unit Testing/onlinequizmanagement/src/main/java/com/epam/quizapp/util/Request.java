@@ -9,6 +9,6 @@ public class Request<T, E> {
 	}
 
 	public static <T, E>Request<T, E> getInstance() {
-		return new Request<T, E>();
+		return new Request<>();
 	}
 }

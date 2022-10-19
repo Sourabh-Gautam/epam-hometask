@@ -26,16 +26,16 @@ public class QuizLibraryPage {
 		}
 
 		for (int i = 0; i < quizList.size(); i++) {
-			LOGGER.info("Quiz " + quizList.get(i).getId() + " - " + quizList.get(i).getQuizTitle());
+			LOGGER.info("Quiz {} - {}", quizList.get(i).getId(), quizList.get(i).getQuizTitle());
 		}
 	}
 
 	public void creatingQuiz() {
 		
-		System.out.print("Enter Quiz Id : ");
+		LOGGER.info("Enter Quiz Id : ");
 		String quizId =ScannerUtility.openScanner().next();
 		
-		System.out.print("Enter Quiz Name : ");
+		LOGGER.info("Enter Quiz Name : ");
 		ScannerUtility.openScanner().nextLine();
 		String quizName =ScannerUtility.openScanner().nextLine();
 		
@@ -48,11 +48,11 @@ public class QuizLibraryPage {
 
 		Renderer.render(QuizLibraryPage.class);
 
-		System.out.print("Do you want to continue (y/n) : ");
+		LOGGER.info("Do you want to continue (y/n) : ");
 
-		if (ScannerUtility.openScanner().next().toLowerCase().equals("y")) {
+		if (ScannerUtility.openScanner().next().equalsIgnoreCase("y")) {
 
-			System.out.print("Enter quiz id to select : ");
+			LOGGER.info("Enter quiz id to select : ");
 			String quizId = ScannerUtility.openScanner().next();
 
 			List<Quiz> quizList = QuizOperation.getInstance().getQuizes();
@@ -78,7 +78,7 @@ public class QuizLibraryPage {
 	}
 
 	public void quizActions(Quiz quiz) {
-		LOGGER.info("You selected " + quiz.getQuizTitle() + " !");
+		LOGGER.info("You selected {} !", quiz.getQuizTitle());
 		LOGGER.info("Press 0 - Exit");
 		LOGGER.info("Press 1 - Delete");
 		LOGGER.info("Press 2 - Rename");

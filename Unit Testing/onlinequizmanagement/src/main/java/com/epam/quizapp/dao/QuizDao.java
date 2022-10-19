@@ -7,10 +7,12 @@ import com.epam.quizapp.database.QuizCollection;
 import com.epam.quizapp.model.Quiz;
 
 public class QuizDao {
+	
+	private QuizDao() {
+	}
 
 	public static List<Quiz> getAllQuiz() {
-		List<Quiz> quizList = QuizCollection.getInstance().getQuizList();
-		return quizList;
+		return QuizCollection.getInstance().getQuizList();
 	}
 
 	public static List<Quiz> deleteQuiz(String quizId) {
@@ -19,7 +21,7 @@ public class QuizDao {
 
 		quizList = quizList.stream().filter(e -> !e.getId().equals(quizId)).collect(Collectors.toList());
 		
-		quizCollection.setQuizList(quizList);
+		QuizCollection.setQuizList(quizList);
 
 		return quizList;
 	}

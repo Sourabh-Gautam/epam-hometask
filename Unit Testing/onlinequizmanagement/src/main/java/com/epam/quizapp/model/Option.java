@@ -37,6 +37,9 @@ public class Option {
 		this.isCorrect = isCorrect;
 	}
 
+	public Option() {
+	}
+
 	@Override
 	public String toString() {
 		return "Option [id=" + id + ", optionName=" + optionName + ", isCorrect=" + isCorrect + "]";

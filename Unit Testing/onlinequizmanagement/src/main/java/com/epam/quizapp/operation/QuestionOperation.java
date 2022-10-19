@@ -10,46 +10,44 @@ import com.epam.quizapp.util.Response;
 import com.epam.quizapp.util.ResponseData;
 
 public class QuestionOperation {
+	
+	private static final String ACTION = "action";
+	private static final String QUIZID = "quizId";
+	
 	private ResponseData<String, List<Question>> fetch(RequestData<String, String> requestData) {
 
 		Request<String, List<Question>> request = Request.getInstance();
 		Response<String, List<Question>> response = request.send(requestData, new QuestionService());
-		ResponseData<String, List<Question>> responseData = response.getResponseData();
+		return  response.getResponseData();
 
-		return responseData;
-		
 	}
 
 	public List<Question> getQuestions(String quizId) {
 		
 		RequestData<String, String> requestData = RequestData.getInstance();
-		requestData.setAttribute("action", "getQuestionList");
-		requestData.setAttribute("quizId", quizId);
+		requestData.setAttribute(ACTION, "getQuestionList");
+		requestData.setAttribute(QUIZID, quizId);
 		ResponseData<String, List<Question>> responseData = fetch(requestData);
-		List<Question> questionList = responseData.getAttribute("data");
-
-		return questionList;
+		return responseData.getAttribute("data");
 
 	}
 	
 	public List<Question> deleteQuestion(String quizId, String questionId) {
 		
 		RequestData<String, String> requestData = RequestData.getInstance();
-		requestData.setAttribute("action", "deleteQuestion");
-		requestData.setAttribute("questionId", questionId);
-		requestData.setAttribute("quizId", quizId);
+		requestData.setAttribute(ACTION, "deleteQuestion");
+		requestData.setAttribute(QUIZID, questionId);
+		requestData.setAttribute(QUIZID, quizId);
 		ResponseData<String, List<Question>> responseData = fetch(requestData);
-		List<Question> questionList = responseData.getAttribute("data");
+		return responseData.getAttribute("data");
 
-		return questionList;
-		
 	}
 
 	public List<Question> addQuestion(String quizId, String questionStatement, String option1, String option2, String option3, String option4, String correctOption) {
 		
 		RequestData<String, String> requestData = RequestData.getInstance();
-		requestData.setAttribute("action", "addQuestion");
-		requestData.setAttribute("quizId", quizId);
+		requestData.setAttribute(ACTION, "addQuestion");
+		requestData.setAttribute(QUIZID, quizId);
 		requestData.setAttribute("questionStatement", questionStatement);
 		requestData.setAttribute("option1", option1);
 		requestData.setAttribute("option2", option2);
@@ -63,7 +61,6 @@ public class QuestionOperation {
 	}
 
 	public static QuestionOperation getInstance() {
-		// TODO Auto-generated method stub
 		return new QuestionOperation();
 	}
 }

@@ -20,9 +20,9 @@ public class RegisterPage {
 	public void procesRegisterPage() {
 				
 		LOGGER.info("Provides the below details.");
-		System.out.print("Username : ");
+		LOGGER.info("Username : ");
 		String username = ScannerUtility.openScanner().next();
-		System.out.print("Password : ");
+		LOGGER.info("Password : ");
 		String password = ScannerUtility.openScanner().next();
 		
 		RequestData<String, String> requestData = RequestData.getInstance();
@@ -30,7 +30,7 @@ public class RegisterPage {
 		requestData.setAttribute("password", password);
 		
 		Request<String, User> request = Request.getInstance();
-		Response<String, User> response = request.send(requestData, new RegisterService<String, User>());
+		Response<String, User> response = request.send(requestData, new RegisterService());
 		
 		if(response.getResponseData().getAttribute("userData")!=null) {
 			LOGGER.info("Congratulations ! You have successfully Registered.");
@@ -39,10 +39,9 @@ public class RegisterPage {
 			LOGGER.info("Sorry, you are already registered.");
 		}
 		LOGGER.info("Do you want to continue ? (y/n)");
-		if(ScannerUtility.openScanner().next().toLowerCase().equals("y")) {
+		if(ScannerUtility.openScanner().next().equalsIgnoreCase("y")) {
 			OnlineQuiz.main(null);
 		}
-		return;
 		
 	}
 	

@@ -6,6 +6,9 @@ import com.epam.quizapp.annotation.Render;
 
 public class Renderer {
 
+	private Renderer() {
+	}
+	
 	public static void render(Class<?> page) {
 		Method[] methods = page.getDeclaredMethods();
 		for (Method method : methods) {

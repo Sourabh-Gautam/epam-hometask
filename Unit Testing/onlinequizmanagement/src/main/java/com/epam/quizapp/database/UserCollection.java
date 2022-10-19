@@ -10,8 +10,10 @@ public class UserCollection {
 	private static List<User> userList = new ArrayList<>();
 	
 	static{
-		userList.add(new User("admin", "admin", "admin"));
-		userList.add(new User("student", "student", "student"));
+		String adminCredentials = "admin";
+		String studentCredentials = "student";
+		userList.add(new User(adminCredentials, adminCredentials, adminCredentials));
+		userList.add(new User(studentCredentials, studentCredentials, studentCredentials));
 	}
 	
 	public void insert(User user) {
@@ -23,15 +25,9 @@ public class UserCollection {
 	}
 	
 	public User getUser(User user) {
-//		for(User existingUser : userList) {
-//			if(user.equals(existingUser)) {
-//				user = existingUser;
-//			}
-//		}
 		
 		return userList.stream().filter(e -> e.equals(user)).findFirst().orElse(null);
 		
-//		return user;
 	}
 	
 	public static UserCollection getInstance() {

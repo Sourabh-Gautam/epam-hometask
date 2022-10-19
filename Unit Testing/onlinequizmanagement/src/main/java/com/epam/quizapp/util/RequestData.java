@@ -16,7 +16,7 @@ public class RequestData<T, E> {
 	}
 	
 	public static <T, E>RequestData<T, E> getInstance() {
-		return new RequestData<T, E>();
+		return new RequestData<>();
 	}
 	
 }

@@ -19,11 +19,11 @@ public class StudentPage {
 
 		Renderer.render(QuizLibraryPage.class);
 
-		System.out.print("Do you want to continue (y/n) : ");
+		LOGGER.info("Do you want to continue (y/n) : ");
 
-		if (ScannerUtility.openScanner().next().toLowerCase().equals("y")) {
+		if (ScannerUtility.openScanner().next().equalsIgnoreCase("y")) {
 
-			System.out.print("Enter quiz id to select : ");
+			LOGGER.info("Enter quiz id to select : ");
 			String quizId = ScannerUtility.openScanner().next();
 
 			QuestionLibraryPage.getInstance().renderQuestionsForStudent(quizId);

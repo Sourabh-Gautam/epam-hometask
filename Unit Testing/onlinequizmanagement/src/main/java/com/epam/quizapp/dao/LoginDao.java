@@ -5,10 +5,13 @@ import com.epam.quizapp.model.User;
 
 public class LoginDao {
 	
+	private LoginDao() {
+		
+	}
+	
 	public static User getUser(User user) {
 		
-		UserCollection userCollection = UserCollection.getInstance();
-		return userCollection.getUser(user);
+		return UserCollection.getInstance().getUser(user);
 	
 	}
 	

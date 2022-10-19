@@ -7,6 +7,10 @@ public class Quiz {
 	private String id;
 	private String quizTitle;
 	private List<Question> questionList;
+	
+	public Quiz() {
+		
+	}
 
 	public String getId() {
 		return id;

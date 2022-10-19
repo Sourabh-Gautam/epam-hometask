@@ -69,7 +69,7 @@ public class QuizCollection {
 		return quizList.stream().filter(e -> e.getId().equals(quizId)).findFirst().orElse(null);
 	}
 	
-	public void setQuizList(List<Quiz> quizList) {
+	public static void setQuizList(List<Quiz> quizList) {
 		QuizCollection.quizList = quizList;
 	}
 	

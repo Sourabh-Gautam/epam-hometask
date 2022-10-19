@@ -33,7 +33,6 @@ public class OnlineQuiz {
 			}
 			else if(choice == 3) {
 				LOGGER.info("Bye !");
-				return;
 			}
 			else {
 				LOGGER.info("Try again. Please choose out of given options !");
