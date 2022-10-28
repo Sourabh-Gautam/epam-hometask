@@ -1,5 +1,7 @@
 package com.epam;
 
+import java.util.List;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -15,7 +17,7 @@ public class BookDao {
 		manager.getTransaction().begin();
 
 		manager.persist(book);
-
+	
 		manager.getTransaction().commit();
 
 		manager.close();
@@ -58,6 +60,12 @@ public class BookDao {
 
 		manager.close();
 		return book;
+	}
+	
+	public List<Book> getBooks(){
+		EntityManager manager = factory.createEntityManager();
+		
+		return manager.createQuery("from Book b",Book.class).getResultList();
 	}
 
 }

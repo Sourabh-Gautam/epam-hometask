@@ -20,6 +20,7 @@ public class QuizDao {
 		quizList = quizList.stream().filter(e -> !e.getId().equals(quizId)).collect(Collectors.toList());
 		
 		quizCollection.setQuizList(quizList);
+		// TODO Create a delete method inside db
 
 		return quizList;
 	}
