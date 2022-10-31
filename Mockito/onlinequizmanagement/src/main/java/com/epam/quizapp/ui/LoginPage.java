@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.epam.quizapp.annotation.Render;
 import com.epam.quizapp.client.OnlineQuiz;
+import com.epam.quizapp.dao.UserDao;
 import com.epam.quizapp.model.User;
 import com.epam.quizapp.service.LoginService;
 import com.epam.quizapp.util.Renderer;
@@ -30,7 +31,7 @@ public class LoginPage {
 		requestData.setAttribute("password", password);
 		
 		Request<String, User> request = Request.getInstance();
-		Response<String, User> response = request.send(requestData, new LoginService());
+		Response<String, User> response = request.send(requestData, new LoginService(UserDao.getInstance()));
 
 		if(response.getResponseData().getAttribute("userData")!=null) {
 			LOGGER.info("Congratulations ! You have successfully Logged in.");

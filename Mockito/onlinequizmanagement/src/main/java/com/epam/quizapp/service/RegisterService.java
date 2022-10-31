@@ -1,24 +1,30 @@
 package com.epam.quizapp.service;
 
-import com.epam.quizapp.dao.RegisterDao;
+import com.epam.quizapp.dao.UserDao;
 import com.epam.quizapp.model.User;
 import com.epam.quizapp.util.RequestData;
 import com.epam.quizapp.util.Response;
 import com.epam.quizapp.util.ResponseData;
 
-public class RegisterService implements Service<String, User> {
+public class RegisterService implements Service<String, Boolean> {
 	
-	public Response<String, User> init(RequestData<String, String> requestData) {
+	UserDao userDao;
+	
+	public RegisterService(UserDao userDao) {
+		this.userDao = userDao;
+	}
+	
+	public Response<String, Boolean> init(RequestData<String, String> requestData) {
 		
 		User user = new User();
 		
 		user.setUsername(requestData.getAttribute("username"));
 		user.setPassword(requestData.getAttribute("password"));
 		
-		User isRegistered = RegisterDao.getInstance().registerUser(user).orElse(null);
-		ResponseData<String, User> responseData = ResponseData.getInstance();
+		boolean isRegistered = userDao.registerUser(user);
+		ResponseData<String, Boolean> responseData = ResponseData.getInstance();
 		responseData.setAttribute("userData", isRegistered);
-		Response<String, User> response = Response.getInstance();
+		Response<String, Boolean> response = Response.getInstance();
 		response.setResponseData(responseData);
 		
 		return response;

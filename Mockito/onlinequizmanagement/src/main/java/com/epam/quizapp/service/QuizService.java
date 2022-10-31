@@ -9,6 +9,12 @@ import com.epam.quizapp.util.Response;
 import com.epam.quizapp.util.ResponseData;
 
 public class QuizService implements Service<String, List<Quiz>> {
+	
+	private QuizDao quizDao;
+	
+	public QuizService(QuizDao quizDao) {
+		this.quizDao = quizDao;
+	}
 
 	@Override
 	public Response<String, List<Quiz>> init(RequestData<String, String> requestData) {
@@ -18,42 +24,38 @@ public class QuizService implements Service<String, List<Quiz>> {
 		
 		ResponseData<String, List<Quiz>> responseData = ResponseData.getInstance();
 		
-		if(action.equals("getQuizList")) {
-			
-			List<Quiz> quizList = QuizDao.getInstance().getAllQuiz();
-			responseData.setAttribute("data", quizList);
-			
-		}
-		else if(action.equals("deleteQuiz")) {
-			
-			List<Quiz> quizList = QuizDao.getInstance().deleteQuiz(Integer.parseInt(quizId));
-			responseData.setAttribute("data", quizList);
-			
-		}
-		else if(action.equals("renameQuiz")) {
-			
-			String newQuizTitle = requestData.getAttribute("newQuizTitle");
-			List<Quiz> quizList = QuizDao.getInstance().renameQuiz(Integer.parseInt(quizId), newQuizTitle);
-			responseData.setAttribute("data", quizList);
-			
-		}
-		else if(action.equals("addQuiz")) {
-			
-			String quizTitle = requestData.getAttribute("quizTitle");
-			
-			Quiz quiz = new Quiz();
-			quiz.setQuizTitle(quizTitle);
-			quiz.setQuestionList(null);
-					
-			List<Quiz> quizList = QuizDao.getInstance().addQuiz(quiz);
-			responseData.setAttribute("data", quizList);
-			
-		}
-		
+		switch(action) {
+			case "getQuizList" : {
+				List<Quiz> quizList = quizDao.getAllQuiz();
+				responseData.setAttribute("data", quizList);
+				break;
+			}
+			case "deleteQuiz" : {
+				List<Quiz> quizList = quizDao.deleteQuiz(Integer.parseInt(quizId));
+				responseData.setAttribute("data", quizList);
+				break;
+			}
+			case "renameQuiz" : {
+				String newQuizTitle = requestData.getAttribute("newQuizTitle");
+				List<Quiz> quizList = quizDao.renameQuiz(Integer.parseInt(quizId), newQuizTitle);
+				responseData.setAttribute("data", quizList);
+				break;
+			}
+			case "addQuiz" : {
+				String quizTitle = requestData.getAttribute("quizTitle");
+				
+				Quiz quiz = new Quiz();
+				quiz.setQuizTitle(quizTitle);
+				quiz.setQuestionList(null);
+						
+				List<Quiz> quizList = quizDao.addQuiz(quiz);
+				responseData.setAttribute("data", quizList);
+			}
+		}		
 		
 		Response<String, List<Quiz>> response = Response.getInstance();
 		response.setResponseData(responseData);
 		return response;
 	}
-	
+		
 }

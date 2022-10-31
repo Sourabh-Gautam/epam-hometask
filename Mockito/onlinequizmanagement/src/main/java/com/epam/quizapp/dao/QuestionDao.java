@@ -36,13 +36,12 @@ public class QuestionDao {
 		
 		EntityManager manager = factory.createEntityManager();
 		
-		manager.clear();
-		
 		manager.getTransaction().begin();
 
+		//TODO What if questionId not found. The nullpointer exception can occur
 		Question question = manager.find(Question.class, questionId);
 		
-		question.getOptionList().clear();
+//		question.getOptionList().clear();
 
 		manager.remove(question);
 //		Query query = manager.createQuery("delete from Question where id = :questionId");

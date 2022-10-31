@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.epam.quizapp.annotation.Render;
 import com.epam.quizapp.client.OnlineQuiz;
-import com.epam.quizapp.model.User;
+import com.epam.quizapp.dao.UserDao;
 import com.epam.quizapp.service.RegisterService;
 import com.epam.quizapp.util.Request;
 import com.epam.quizapp.util.RequestData;
@@ -29,10 +29,10 @@ public class RegisterPage {
 		requestData.setAttribute("username", username);
 		requestData.setAttribute("password", password);
 		
-		Request<String, User> request = Request.getInstance();
-		Response<String, User> response = request.send(requestData, new RegisterService());
+		Request<String, Boolean> request = Request.getInstance();
+		Response<String, Boolean> response = request.send(requestData, new RegisterService(UserDao.getInstance()));
 		
-		if(response.getResponseData().getAttribute("userData")!=null) {
+		if(response.getResponseData().getAttribute("userData")) {
 			LOGGER.info("Congratulations ! You have successfully Registered.");
 		}
 		else {

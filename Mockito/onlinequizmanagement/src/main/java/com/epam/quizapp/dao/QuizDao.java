@@ -42,18 +42,19 @@ public class QuizDao {
 	}
 
 	public List<Quiz> renameQuiz(int quizId, String newQuizTitle) {
-
+		
 		EntityManager manager = factory.createEntityManager();
 
-		manager.getTransaction().begin();
-
 		Quiz quiz = manager.find(Quiz.class, quizId);
-		quiz.setQuizTitle(newQuizTitle);
 		
-		manager.getTransaction().commit();
+		if(quiz!=null) {
+			manager.getTransaction().begin();
+			quiz.setQuizTitle(newQuizTitle);
+			manager.getTransaction().commit();
+		}
 
 		manager.close();
-
+		
 		return getAllQuiz();
 		
 	}

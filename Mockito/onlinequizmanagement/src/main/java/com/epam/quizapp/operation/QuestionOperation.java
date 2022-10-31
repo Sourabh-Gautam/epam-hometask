@@ -2,6 +2,7 @@ package com.epam.quizapp.operation;
 
 import java.util.List;
 
+import com.epam.quizapp.dao.QuestionDao;
 import com.epam.quizapp.model.Question;
 import com.epam.quizapp.service.QuestionService;
 import com.epam.quizapp.util.Request;
@@ -17,7 +18,7 @@ public class QuestionOperation {
 	private ResponseData<String, List<Question>> fetch(RequestData<String, String> requestData) {
 
 		Request<String, List<Question>> request = Request.getInstance();
-		Response<String, List<Question>> response = request.send(requestData, new QuestionService());
+		Response<String, List<Question>> response = request.send(requestData, new QuestionService(QuestionDao.getInstance()));
 		return  response.getResponseData();
 
 	}
@@ -55,7 +56,7 @@ public class QuestionOperation {
 		requestData.setAttribute("option4", option4);
 		requestData.setAttribute("correctOption", correctOption);
 		Request<String, List<Question>> request = Request.getInstance();
-		Response<String, List<Question>> response = request.send(requestData, new QuestionService());
+		Response<String, List<Question>> response = request.send(requestData, new QuestionService(QuestionDao.getInstance()));
 		ResponseData<String, List<Question>> responseData = response.getResponseData();
 		return responseData.getAttribute("data");
 	}
