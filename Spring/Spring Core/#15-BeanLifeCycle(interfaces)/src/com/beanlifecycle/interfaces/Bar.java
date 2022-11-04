@@ -1,0 +1,12 @@
+package com.beanlifecycle.interfaces;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Bar {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/beanlifecycle/interfaces/config.xml");
+		Person p = context.getBean("person", Person.class);
+		p.chilling();
+		context.close();
+	}
+}

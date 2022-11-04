@@ -1,0 +1,3 @@
+1)If a parent class is throwing Checked Exception(IOException) then Child class can throw(IOException and sub types of it) or may not throw that exception.
+2)If a parent class is not throwing any Checked Exception then Child class must not throw any checked exceptions but it can throw Unchecked Exceptions.
+3)If a parent class is  throwing any Unchecked Exception then it's not mandatory that child has to deal with unchecked Exception,it can throw any type of unchecked exception but no checked exceptions it must not throw.

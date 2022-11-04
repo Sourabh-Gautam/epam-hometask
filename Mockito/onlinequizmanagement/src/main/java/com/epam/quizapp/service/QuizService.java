@@ -50,7 +50,9 @@ public class QuizService implements Service<String, List<Quiz>> {
 						
 				List<Quiz> quizList = quizDao.addQuiz(quiz);
 				responseData.setAttribute("data", quizList);
+				break;
 			}
+
 		}		
 		
 		Response<String, List<Quiz>> response = Response.getInstance();

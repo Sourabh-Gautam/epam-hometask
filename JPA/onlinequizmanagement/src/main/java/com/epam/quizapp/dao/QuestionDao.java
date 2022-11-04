@@ -36,14 +36,10 @@ public class QuestionDao {
 		
 		EntityManager manager = factory.createEntityManager();
 		
-		manager.clear();
-		
 		manager.getTransaction().begin();
 
 		Question question = manager.find(Question.class, questionId);
 		
-		question.getOptionList().clear();
-
 		manager.remove(question);
 //		Query query = manager.createQuery("delete from Question where id = :questionId");
 		

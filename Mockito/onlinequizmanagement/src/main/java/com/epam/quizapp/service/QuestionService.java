@@ -86,6 +86,7 @@ public class QuestionService implements Service<String, List<Question>> {
 				
 				List<Question> questionList = questionDao.addQuestion(quizId, question);
 				responseData.setAttribute("data", questionList);
+				break;
 			}
 		
 		}

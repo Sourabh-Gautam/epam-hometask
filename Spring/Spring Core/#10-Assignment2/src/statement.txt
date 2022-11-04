@@ -1,0 +1,3 @@
+While working with component we just learned that how to create bean object using @Component but we didn't learned how we going to inject dependency on that particular object. In this assignment we cover how can we do that.
+
+Remember : Don't use .xml file

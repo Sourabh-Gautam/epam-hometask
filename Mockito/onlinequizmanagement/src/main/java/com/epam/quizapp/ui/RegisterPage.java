@@ -32,7 +32,7 @@ public class RegisterPage {
 		Request<String, Boolean> request = Request.getInstance();
 		Response<String, Boolean> response = request.send(requestData, new RegisterService(UserDao.getInstance()));
 		
-		if(response.getResponseData().getAttribute("userData")) {
+		if(Boolean.TRUE.equals(response.getResponseData().getAttribute("userData"))) {
 			LOGGER.info("Congratulations ! You have successfully Registered.");
 		}
 		else {

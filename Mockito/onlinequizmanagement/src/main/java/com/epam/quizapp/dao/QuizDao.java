@@ -11,67 +11,65 @@ import jakarta.persistence.Persistence;
 public class QuizDao {
 
 	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("my-persistence-unit");
-
+	
 	private static QuizDao quizDao;
 
 	private QuizDao() {
 	}
 
 	public List<Quiz> getAllQuiz() {
-
+		
 		EntityManager manager = factory.createEntityManager();
 		List<Quiz> quizList = manager.createQuery("from Quiz", Quiz.class).getResultList();
 		manager.close();
+		
 		return quizList;
 
 	}
 
 	public List<Quiz> deleteQuiz(int quizId) {
-
+		
 		EntityManager manager = factory.createEntityManager();
-
-		manager.getTransaction().begin();
-
-		manager.remove(manager.find(Quiz.class, quizId));
-
-		manager.getTransaction().commit();
-
+		Quiz quiz = manager.find(Quiz.class, quizId);
+		
+		if(quiz!=null) {
+			manager.getTransaction().begin();
+			manager.remove(quiz);
+			manager.getTransaction().commit();
+		}
+		
+		List<Quiz> quizList = manager.createQuery("from Quiz", Quiz.class).getResultList();
 		manager.close();
 
-		return getAllQuiz();
+		return quizList;
 	}
 
 	public List<Quiz> renameQuiz(int quizId, String newQuizTitle) {
 		
 		EntityManager manager = factory.createEntityManager();
-
 		Quiz quiz = manager.find(Quiz.class, quizId);
-		
 		if(quiz!=null) {
 			manager.getTransaction().begin();
 			quiz.setQuizTitle(newQuizTitle);
 			manager.getTransaction().commit();
 		}
-
+		List<Quiz> quizList = manager.createQuery("from Quiz", Quiz.class).getResultList();
 		manager.close();
 		
-		return getAllQuiz();
+		return quizList;
 		
 	}
 
 	public List<Quiz> addQuiz(Quiz quiz) {
-
+		
 		EntityManager manager = factory.createEntityManager();
-
 		manager.getTransaction().begin();
-
 		manager.persist(quiz);
-
 		manager.getTransaction().commit();
-
+		List<Quiz> quizList = manager.createQuery("from Quiz", Quiz.class).getResultList();
 		manager.close();
 
-		return getAllQuiz();
+		return quizList;
 	}
 
 	public static QuizDao getInstance() {

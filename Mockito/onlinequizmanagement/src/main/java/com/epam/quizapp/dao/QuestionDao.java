@@ -1,7 +1,6 @@
 package com.epam.quizapp.dao;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.epam.quizapp.model.Question;
 import com.epam.quizapp.model.Quiz;
@@ -22,11 +21,7 @@ public class QuestionDao {
 	public List<Question> getQuestionList(int quizId) {
 		
 		EntityManager manager = factory.createEntityManager();
-		
-		manager.getTransaction().begin();
 		Quiz quiz = manager.find(Quiz.class, quizId);
-		manager.getTransaction().commit();
-		
 		manager.close();
 		
 		return quiz.getQuestionList();
@@ -38,15 +33,12 @@ public class QuestionDao {
 		
 		manager.getTransaction().begin();
 
-		//TODO What if questionId not found. The nullpointer exception can occur
 		Question question = manager.find(Question.class, questionId);
 		
-//		question.getOptionList().clear();
+		if(question != null) {
+			manager.remove(question);
+		}
 
-		manager.remove(question);
-//		Query query = manager.createQuery("delete from Question where id = :questionId");
-		
-//		query.setParameter("questionId", questionId);
 		manager.getTransaction().commit();
 		
 		manager.close();
@@ -58,8 +50,8 @@ public class QuestionDao {
 		
 		EntityManager manager = factory.createEntityManager();
 		
-		manager.getTransaction().begin();
 		Quiz quiz = manager.find(Quiz.class, quizId);
+		manager.getTransaction().begin();
 		question.setQuiz(quiz);
 		List<Question> questionList = quiz.getQuestionList();
 		questionList.add(question);
