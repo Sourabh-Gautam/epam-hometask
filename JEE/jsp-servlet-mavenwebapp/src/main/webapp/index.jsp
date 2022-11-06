@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Homepage</title>
+</head>
+<body>
+
+	<form action="greeting" method="get">
+		<label for="name">Enter your name : </label>
+		<input name="name" id="name" />
+		<input type="submit" value="Submit"/>
+	</form>
+
+</body>
+</html>

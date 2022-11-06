@@ -1,7 +1,5 @@
 package com.epam;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,16 +9,11 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="ASSET_MNGT")
-public class AssetMgnt implements Serializable{
- 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class AssetMgnt {
 
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="AM_ID", unique = true, nullable = false)
+    @Column(name="AM_ID")
     private Long amId;
  
     @Column(name="EMP_ID")

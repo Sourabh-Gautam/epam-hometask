@@ -1,13 +1,10 @@
 package com.epam;
 
-import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,13 +14,11 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="EMPLOYEES")
-public class Employee implements Serializable {
+public class Employee {
  
-	private static final long serialVersionUID = 1L;
-
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="EMP_ID", unique = true, nullable = false)
+    @Column(name="EMP_ID")
     private Long empId;
  
     private String name;
@@ -32,7 +27,7 @@ public class Employee implements Serializable {
  
     private Long salary;
  
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="EMP_ID")
     private List<AssetMgnt> assetMgnt;
  

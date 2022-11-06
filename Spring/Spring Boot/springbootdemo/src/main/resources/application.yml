@@ -1,0 +1,75 @@
+server:
+  port: '8082'
+  
+---
+
+spring:
+  profiles:
+    active: qa
+  
+---
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/devdepartmentdb
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: Hello World !
+  
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/proddepartmentdb
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: Hello World !
+  
+---
+
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/qadepartmentdb
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+    
+welcome:
+  message: Hello World !
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" 

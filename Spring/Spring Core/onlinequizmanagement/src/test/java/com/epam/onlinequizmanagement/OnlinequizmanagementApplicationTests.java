@@ -1,0 +1,13 @@
+package com.epam.onlinequizmanagement;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class OnlinequizmanagementApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
