@@ -1,7 +1,5 @@
 package com.epam.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -22,4 +20,6 @@ public class User {
 	@Id
 	private String username;
 	private String password;
+	private String role;
+	
 }
