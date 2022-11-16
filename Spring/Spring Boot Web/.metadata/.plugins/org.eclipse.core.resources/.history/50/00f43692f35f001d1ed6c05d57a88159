@@ -1,0 +1,14 @@
+package com.epam.service;
+
+import com.epam.repository.QuizRepository;
+
+public class AdminService {
+	
+	QuizRepository repository;
+	
+	public AdminService(QuizRepository repository) {
+		this.repository = repository;
+	}
+	
+	
+}

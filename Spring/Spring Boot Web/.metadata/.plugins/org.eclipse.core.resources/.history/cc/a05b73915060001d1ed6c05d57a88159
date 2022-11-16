@@ -1,0 +1,12 @@
+package com.epam.service;
+
+import com.epam.entity.Quiz;
+
+public class StudentService {
+
+	public Quiz getQuizById(int parseInt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,48 @@
+package com.epam.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.epam.entity.Quiz;
+import com.epam.entity.User;
+import com.epam.repository.QuestionRepository;
+import com.epam.repository.QuizRepository;
+import com.epam.repository.UserRepository;
+
+@SpringBootTest
+public class AdminServiceTest {
+	
+	@MockBean
+	QuizRepository quizRepository;
+	
+	@MockBean
+	QuestionRepository questionRepository;
+	
+	private Quiz quiz;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		quiz = Quiz.builder()
+				.quizTitle("Maths Quiz")
+				.build();
+	}
+	
+	@Test
+	void createQuizTest() {
+		User userdb = quizRepository.save();
+
+		assertEquals("epam", userdb.getUsername());
+	}
+	
+	@Test
+	void getUserByUsernameTest() {
+		when(userRepository.findByUsername("epam")).thenReturn(user);
+		User userdb = userRepository.findByUsername("epam");
+		assertEquals("epam", userdb.getUsername());
+	}
+}

@@ -1,0 +1,42 @@
+1667926746059	Rename resource 'jsp'
+1667933836219	Copy package
+1667933846723	Copy package
+1667933855612	Copy package
+1667933864333	Rename package 'com.example.demo'
+1667933913385	Rename package 'com.example'
+1667934906929	Delete element
+1667935056378	Delete elements
+1667935326490	Rename type 'LoginService'
+1667935342549	Delete element
+1667935349401	Rename type 'RegisterService'
+1667944641694	Copy file
+1667944660663	Copy file
+1667947549328	Copy file
+1667947691948	Rename resource 'success.jsp'
+1667947834538	Copy file
+1667949112581	Copy file
+1667949118077	Copy file
+1667972328896	Copy compilation unit
+1667972857671	Copy file
+1667975375758	Delete element
+1667975404677	Copy file
+1667975881783	Copy file
+1667977105895	Rename resource 'showallquiz.jsp'
+1667978447660	Rename resource 'showallquestion.jsp'
+1667978526778	Rename resource 'quizview.jsp'
+1668008882743	Rename resource 'adminquizview.jsp'
+1668012842220	Copy file
+1668013180098	Copy compilation unit
+1668063465993	Copy package
+1668063474540	Rename type 'UserController'
+1668065846376	Delete element
+1668065850494	Delete element
+1668069649817	Rename type 'UserRepositoryTes'
+1668071162946	Rename type 'AdminController'
+1668103434916	Copy compilation unit
+1668103440720	Delete element
+1668104905299	Copy compilation unit
+1668109083591	Copy compilation unit
+1668109521739	Rename package 'com.example.demo'
+1668189850797	Copy compilation unit
+1668189972310	Rename type 'QuizRepositoryTest'

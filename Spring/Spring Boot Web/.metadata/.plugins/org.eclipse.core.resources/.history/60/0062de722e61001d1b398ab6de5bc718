@@ -1,0 +1,99 @@
+package com.epam.service;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.epam.entity.Question;
+import com.epam.entity.Quiz;
+import com.epam.repository.QuestionRepository;
+import com.epam.repository.QuizRepository;
+
+@SpringBootTest
+public class AdminServiceTest {
+	
+	@MockBean
+	QuizRepository quizRepository;
+	
+	@MockBean
+	QuestionRepository questionRepository;
+	
+	@Autowired
+	AdminService adminService;
+	
+	private Quiz quiz;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		quiz = Quiz.builder()
+				.quizTitle("Maths Quiz")
+				.build();
+	}
+	
+	@Test
+	void createQuizTest() {
+		when(quizRepository.save(quiz)).thenReturn(quiz);
+		Quiz result = adminService.createQuiz(quiz);
+		assertNotNull(result);
+	}
+	
+	@Test
+	void getAllQuizTest() {
+		List<Quiz> quizList = mock(List.class);
+		when(quizRepository.findAll()).thenReturn(quizList);
+		List<Quiz> result = adminService.getAllQuiz();
+		assertNotNull(result);
+	}
+	
+	@Test
+	void getQuizByIdTest() {
+		when(quizRepository.findById(1)).thenReturn(Optional.ofNullable(quiz));
+		Quiz result = adminService.getQuizById(1);
+		assertNotNull(result);
+	}
+	
+	@Test
+	void findQuestionsByQuizIdTest() {
+		List<Question> questionList = mock(List.class);
+		when(questionRepository.findQuestionsByQuizId(1)).thenReturn(questionList);
+		List<Question> result = adminService.findQuestionsByQuizId(1);
+		assertNotNull(result);
+	}
+	
+	@Test
+	void addQuestionTest() {
+		Question question = mock(Question.class);
+		when(questionRepository.save(question)).thenReturn(question);
+		Question result = adminService.addQuestion(question);
+		assertNotNull(result);
+	}
+	
+	@Test
+	void deleteQuestionByIdTest() {
+		doNothing().when(questionRepository).deleteById(1);
+		adminService.deleteQuestionById(1);
+		verify(adminService, times(1)).deleteQuestionById(1);
+	}
+	
+	@Test
+	void addQuestionTest() {
+		Question question = mock(Question.class);
+		when(questionRepository.save(question)).thenReturn(question);
+		Question result = adminService.addQuestion(question);
+		assertNotNull(result);
+	}
+	
+	
+}

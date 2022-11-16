@@ -1,0 +1,31 @@
+package com.epam.service;
+
+import org.springframework.stereotype.Service;
+
+import com.epam.repository.UserRepository;
+
+@Service
+public class UserService {
+
+	UserRepository userRepository;
+	
+	public UserService(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+	
+//	public Response<String, User> init(RequestData<String, String> requestData) {
+//		
+//		User user = new User();
+//		user.setUsername(requestData.getAttribute("username"));
+//		user.setPassword(requestData.getAttribute("password"));
+//		
+//		User existingUser = userRepository.getUser(user);
+//		ResponseData<String, User> responseData = ResponseData.getInstance();
+//		responseData.setAttribute("userData", existingUser);
+//		
+//		Response<String, User> response = Response.getInstance();
+//		response.setResponseData(responseData);
+//		return response;
+//	}
+
+}

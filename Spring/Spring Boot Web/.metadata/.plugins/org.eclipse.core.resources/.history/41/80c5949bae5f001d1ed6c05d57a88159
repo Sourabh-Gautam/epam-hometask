@@ -1,0 +1,17 @@
+package com.epam;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@SpringBootApplication(scanBasePackages = "com.epam")
+@CrossOrigin
+public class OnlinequizmanagementApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext ac = SpringApplication.run(OnlinequizmanagementApplication.class, args);
+//		Arrays.asList(ac.getBeanDefinitionNames()).stream().forEach(System.out::println);
+	}
+
+}

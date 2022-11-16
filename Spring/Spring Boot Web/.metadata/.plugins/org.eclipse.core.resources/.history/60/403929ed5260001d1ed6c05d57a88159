@@ -1,0 +1,19 @@
+package com.epam.service;
+
+import com.epam.entity.Quiz;
+import com.epam.repository.QuizRepository;
+
+public class StudentService {
+	
+	QuizRepository quizRepository;
+
+	public StudentService(QuizRepository quizRepository) {
+		super();
+		this.quizRepository = quizRepository;
+	}
+
+	public Quiz getQuizById(int parseInt) {
+		return null;
+	}
+
+}

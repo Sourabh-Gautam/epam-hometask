@@ -1,0 +1,55 @@
+package com.epam.service;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.epam.entity.Quiz;
+import com.epam.repository.QuestionRepository;
+import com.epam.repository.QuizRepository;
+
+@SpringBootTest
+public class AdminServiceTest {
+	
+	@MockBean
+	QuizRepository quizRepository;
+	
+	@MockBean
+	QuestionRepository questionRepository;
+	
+	@Autowired
+	AdminService adminService;
+	
+	private Quiz quiz;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		quiz = Quiz.builder()
+				.quizTitle("Maths Quiz")
+				.build();
+	}
+	
+	@Test
+	void createQuizTest() {
+		when(quizRepository.save(quiz)).thenReturn(quiz);
+		Quiz quizdb = adminService.createQuiz(quiz);
+		assertNotNull(quizdb);
+	}
+	
+	@Test
+	void getAllQuizTest() {
+		List<Quiz> quizList = mock(List.class);
+		when(quizRepository.findAll()).thenReturn(quizList);
+		List<Quiz> quizListDb = adminService.getAllQuiz();
+		assertNotNull(quizListDb);
+	}
+	
+}

@@ -1,0 +1,17 @@
+package com.epam;
+
+import java.util.Arrays;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+@SpringBootApplication(scanBasePackages = "com.epam")
+public class OnlinequizmanagementApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext ac = SpringApplication.run(OnlinequizmanagementApplication.class, args);
+		Arrays.asList(ac.getBeanDefinitionNames()).stream().forEach(System.out::println);
+	}
+
+}

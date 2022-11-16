@@ -1,0 +1,22 @@
+package com.epam.service;
+
+import org.springframework.stereotype.Service;
+
+import com.epam.entity.Quiz;
+import com.epam.repository.QuizRepository;
+
+@Service
+public class AdminService {
+	
+	QuizRepository repository;
+	
+	public AdminService(QuizRepository repository) {
+		this.repository = repository;
+	}
+
+	public Quiz createQuiz(Quiz quiz) {
+		return repository.save(quiz);
+	}
+	
+	
+}

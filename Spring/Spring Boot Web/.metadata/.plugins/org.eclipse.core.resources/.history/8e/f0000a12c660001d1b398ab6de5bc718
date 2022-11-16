@@ -1,0 +1,99 @@
+package com.epam.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.epam.entity.Quiz;
+import com.epam.entity.User;
+import com.epam.service.StudentService;
+import com.epam.service.UserService;
+
+
+@RestController
+@RequestMapping("/user")
+public class UserControllerTest {
+	
+	private static final Logger LOGGER = LogManager.getLogger(UserController.class);
+
+	UserService userService;
+	StudentService service;
+	
+	public UserControllerTest(UserService userService, StudentService service) {
+		super();
+		this.userService = userService;
+		this.service = service;
+	}
+
+	@PostMapping("/register")
+	public ModelAndView registerUser(HttpServletRequest request) {
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		User user = User.builder()
+				.username(username)
+				.password(password)
+				.role("student")
+				.build();
+		User userdb = userService.register(user);
+		String view = "failure";
+		if(userdb!=null) {
+			view = "regsuccess";
+		}
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName(view);
+		return mv;
+				
+	}
+	
+	@GetMapping("/login")
+	public ModelAndView loginUser(HttpServletRequest request) {
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		LOGGER.info(username);
+		LOGGER.info(password);
+		User user = userService.getUserByUsername(username);
+		LOGGER.info(user);
+		ModelAndView mv = new ModelAndView();
+		String view = "loginpage";
+		if(user!=null) {
+			LOGGER.info(password);
+			if(username.equals(user.getUsername()) && username.equals(user.getPassword())) {
+				LOGGER.info("pwd"+password);
+				if(user.getRole().equals("admin")) {
+					view = "adminpage";
+				}else {
+					List<Quiz> quizList = service.getAllQuiz();
+					request.setAttribute("quizList", quizList);
+					view = "studentpage";
+				}
+			} 
+		}
+		LOGGER.info(view);
+		mv.setViewName(view);
+		return mv;
+				
+	}
+	
+	@GetMapping("/registerpage")
+	public ModelAndView registerPage() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("registerpage");
+		return mv;
+	}
+	
+	@GetMapping("/loginpage")
+	public ModelAndView loginPage() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("loginpage");
+		return mv;
+	}
+	
+}
