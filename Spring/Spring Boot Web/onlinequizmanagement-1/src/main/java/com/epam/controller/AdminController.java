@@ -101,9 +101,6 @@ public class AdminController {
 		String option4 = request.getParameter("option4");
 		int quizId = Integer.parseInt(request.getParameter(QUIZID));
 
-		System.out.println(
-				option1 + " " + option2 + " " + option3 + " " + option4 + " " + quizId + " " + questionStatement);
-
 		int correctOption = Integer.parseInt(request.getParameter("correctoption")) - 1;
 
 		Question question = new Question();
@@ -145,6 +142,9 @@ public class AdminController {
 		System.out.println(quizId);
 
 		ModelAndView mv = new ModelAndView();
+		
+		System.out.println(question);
+		
 		service.addQuestion(question);
 		try {
 			Quiz quiz = service.getQuizById(quizId);
