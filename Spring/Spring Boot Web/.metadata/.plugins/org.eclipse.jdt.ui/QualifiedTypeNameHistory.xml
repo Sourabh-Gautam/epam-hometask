@@ -50,4 +50,9 @@
     <fullyQualifiedTypeName name="com.epam.entity.Question"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.EnableWebSecurity"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
 </qualifiedTypeNameHistroy>
