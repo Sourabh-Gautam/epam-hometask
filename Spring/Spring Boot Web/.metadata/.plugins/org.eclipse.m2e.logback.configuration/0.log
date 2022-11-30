@@ -7608,3 +7608,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration SpringBootDemoAppli
 2022-11-23 14:04:17,250 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-11-23 14:04:17,250 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\home-task\Spring\Spring Boot Web\onlinequizmanagement-1\src\test\resources
 2022-11-25 02:49:44,745 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-11-27 20:38:19,242 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
