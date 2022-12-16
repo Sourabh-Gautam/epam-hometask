@@ -1,0 +1,9 @@
+1.) Print the elements of array which start with S
+
+2.) Find the person object which name is Sourabh.
+
+3.) Find the person object which name is Sourabh and Age is greate than 18.
+
+4.) Print the name of all person available in the list.
+
+5.) Find the products which has price more than 100.
