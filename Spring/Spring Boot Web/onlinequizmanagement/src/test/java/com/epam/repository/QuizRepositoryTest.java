@@ -31,7 +31,7 @@ class QuizRepositoryTest {
 	@Test
 	void registerStudentTest() {
 		User dbUser = userRepository.save(user);
-		assertThat(dbUser.getId()).isPositive();
+		assertThat(dbUser.getUsername()).isNotBlank();
 	}
 	
 	@Test

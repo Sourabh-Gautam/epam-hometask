@@ -1,0 +1,44 @@
+java inference feature
+
+Learn design patterns
+
+---------------------------------------
+
+argument captor
+
+method verification
+
+method interaction
+
+learn hamcrest
+
+if id not found we should retunr an exception
+
+Register and Login should be User
+
+Spring Awaare Interfaces
+
+global exception handler 
+
+dtp
+
+@Profile 
+
+@Configuration
+
+@ConfigurationEnable
+
+Complete hackrank certifiction before 15th morning
+
+Give feedback
+
+
+
+
+Advantage of lamdas
+
+immutability and lazy loading
+
+
+rest priciples
+

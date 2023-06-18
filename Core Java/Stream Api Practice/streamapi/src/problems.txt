@@ -1,9 +1,5 @@
-1.) Print the elements of array which start with S
+1.) Different way of creating stream.
 
-2.) Find the person object which name is Sourabh.
+2.) How would you convert a list into stream and vice versa ?
 
-3.) Find the person object which name is Sourabh and Age is greate than 18.
-
-4.) Print the name of all person available in the list.
-
-5.) Find the products which has price more than 100.
+3.) How would you convert a array into stream and vice versa ?

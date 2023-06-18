@@ -1,0 +1,23 @@
+Core java
+
+Functional Programming - Functional Interface, Anonymous Classes, Stream API, Lambda Expressions
+
+SOLID Design Principle and Design Patterns
+
+Log4j
+
+Unit Testing - JUnit
+
+Code Coverage
+
+Sonar Lint
+
+JPA & Hibernate
+
+Stub
+
+Mokito
+
+Spring Core
+
+Spring Boot - STS ( Spring Tool Suite )

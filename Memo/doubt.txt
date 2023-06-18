@@ -1,0 +1,18 @@
+How should i rearrange my dao classes so that i can write the mock test cases for them.
+
+Remove is not working in jpa.
+
+How to sync hometask folder with onederive
+
+-------------------------------------------------------
+
+
+1. ) When should we use Eager Loading and When Lazy Loading ? Why org.hibernate.LazyInitializationException: occurs ?
+
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.epam.quizapp.model.Quiz.questionList: could not initialize proxy - no Session
+
+2.) What happens to make an object as serializable
+
+3.) What is cyclic dependency ?
+
+4.) How client will know about all the fields details to make api call ?

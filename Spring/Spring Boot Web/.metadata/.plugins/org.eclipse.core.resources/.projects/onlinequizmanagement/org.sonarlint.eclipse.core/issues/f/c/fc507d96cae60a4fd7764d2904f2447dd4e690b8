@@ -1,0 +1,42 @@
+
+y
+java:S1106"AMove this left curly brace to the beginning of next line of code.(ÖœøÃúÿÿÿÿ8¸šÊ·ó0Hı'RMINORZ
+CODE_SMELL
+y
+java:S1106"AMove this left curly brace to the beginning of next line of code.(Ì†Ùîûÿÿÿÿ8¸šÊ·ó0Hş'RMINORZ
+CODE_SMELL
+t
+java:S1106"AMove this left curly brace to the beginning of next line of code.(ÓÍ¦8¸šÊ·ó0Hÿ'RMINORZ
+CODE_SMELL
+t
+java:S1106"AMove this left curly brace to the beginning of next line of code.(«Ò¾Á8¸šÊ·ó0H€(RMINORZ
+CODE_SMELL
+t
+java:S1106!"AMove this left curly brace to the beginning of next line of code.(ªÄ®ò8¸šÊ·ó0H(RMINORZ
+CODE_SMELL
+y
+java:S1106$"AMove this left curly brace to the beginning of next line of code.(‹Ôì…úÿÿÿÿ8¸šÊ·ó0H‚(RMINORZ
+CODE_SMELL
+y
+java:S1106("AMove this left curly brace to the beginning of next line of code.(Úø©„ÿÿÿÿÿ8¸šÊ·ó0Hƒ(RMINORZ
+CODE_SMELL
+t
+java:S1106,"AMove this left curly brace to the beginning of next line of code.(èÍÉÖ8¸šÊ·ó0H„(RMINORZ
+CODE_SMELL
+y
+java:S11061"AMove this left curly brace to the beginning of next line of code.(ÂñÇæùÿÿÿÿ8¸šÊ·ó0H…(RMINORZ
+CODE_SMELL
+S
+java:S1451"&Add or update the header of this file.8¸šÊ·ó0H†(RBLOCKERZ
+CODE_SMELL
+o	java:S105"EReplace all tab characters in this file by sequences of white-spaces.8¸šÊ·ó0H‡(RMINORZ
+CODE_SMELL
+j
+java:S2039"7Explicitly declare the visibility for "quizRepository".(ı£ÃË8¸šÊ·ó0Hˆ(RMINORZ
+CODE_SMELL
+s
+java:S2039";Explicitly declare the visibility for "questionRepository".(Æ‚€äüÿÿÿÿ8¸šÊ·ó0H‰(RMINORZ
+CODE_SMELL
+î
+java:S4605"²'AdminService' is not reachable by @ComponentScan or @SpringBootApplication. Either move it to a package configured in @ComponentScan or update your @ComponentScan configuration.(ÖœøÃúÿÿÿÿ8¸šÊ·ó0HŠ(RCRITICALZ
+CODE_SMELL

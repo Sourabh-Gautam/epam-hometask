@@ -1,4 +1,168 @@
 
 €
-java:S1192("JDefine a constant instead of duplicating this literal "adminpage" 3 times.(²Î¡¹8ªĞİ°Ç0HëRCRITICALZ
+java:S1192("JDefine a constant instead of duplicating this literal "adminpage" 3 times.(²Î¡¹8ªĞİ°Ç0HÁ'RCRITICALZ
+CODE_SMELL
+]
+java:S11668"%Either log or rethrow this exception.(ãÎÌŞıÿÿÿÿ8ÊÀÉ·ó0HÅ'RMAJORZ
+CODE_SMELL
+]
+java:S1166W"%Either log or rethrow this exception.(¨‰âèıÿÿÿÿ8ÊÀÉ·ó0HÆ'RMAJORZ
+CODE_SMELL
+^
+java:S1166™"%Either log or rethrow this exception.(¨‰âèıÿÿÿÿ8ÊÀÉ·ó0HÇ'RMAJORZ
+CODE_SMELL
+t
+java:S1106"AMove this left curly brace to the beginning of next line of code.(î¬’Ì8ÊÀÉ·ó0HÈ'RMINORZ
+CODE_SMELL
+y
+java:S1106"AMove this left curly brace to the beginning of next line of code.(íŒªÿÿÿÿÿ8ÊÀÉ·ó0HÉ'RMINORZ
+CODE_SMELL
+t
+java:S1106!"AMove this left curly brace to the beginning of next line of code.(è‡Ê8ÊÀÉ·ó0HÊ'RMINORZ
+CODE_SMELL
+t
+java:S1106'"AMove this left curly brace to the beginning of next line of code.(Ôâ–8ÊÀÉ·ó0HË'RMINORZ
+CODE_SMELL
+t
+java:S11061"AMove this left curly brace to the beginning of next line of code.(Á˜üÆ8ÊÀÉ·ó0HÌ'RMINORZ
+CODE_SMELL
+y
+java:S11064"AMove this left curly brace to the beginning of next line of code.(¡»¢üùÿÿÿÿ8ÊÀÉ·ó0HÍ'RMINORZ
+CODE_SMELL
+y
+java:S11068"AMove this left curly brace to the beginning of next line of code.(ãÎÌŞıÿÿÿÿ8ÊÀÉ·ó0HÎ'RMINORZ
+CODE_SMELL
+t
+java:S1106B"AMove this left curly brace to the beginning of next line of code.(¼Ÿ«8ÊÀÉ·ó0HÏ'RMINORZ
+CODE_SMELL
+y
+java:S1106M"AMove this left curly brace to the beginning of next line of code.(üÄ—åúÿÿÿÿ8ÊÀÉ·ó0HĞ'RMINORZ
+CODE_SMELL
+y
+java:S1106S"AMove this left curly brace to the beginning of next line of code.(¡»¢üùÿÿÿÿ8ÊÀÉ·ó0HÑ'RMINORZ
+CODE_SMELL
+y
+java:S1106W"AMove this left curly brace to the beginning of next line of code.(¨‰âèıÿÿÿÿ8ÊÀÉ·ó0HÒ'RMINORZ
+CODE_SMELL
+y
+java:S1106`"AMove this left curly brace to the beginning of next line of code.(ùÀª¢ùÿÿÿÿ8ÊÀÉ·ó0HÓ'RMINORZ
+CODE_SMELL
+z
+java:S1106•"AMove this left curly brace to the beginning of next line of code.(¡»¢üùÿÿÿÿ8ÊÀÉ·ó0HÔ'RMINORZ
+CODE_SMELL
+z
+java:S1106™"AMove this left curly brace to the beginning of next line of code.(¨‰âèıÿÿÿÿ8ÊÀÉ·ó0HÕ'RMINORZ
+CODE_SMELL
+z
+java:S1106¢"AMove this left curly brace to the beginning of next line of code.(ªŞ‘Øüÿÿÿÿ8ÊÀÉ·ó0HÖ'RMINORZ
+CODE_SMELL
+z
+java:S1106©"AMove this left curly brace to the beginning of next line of code.(§Í»‰ÿÿÿÿÿ8ÊÀÉ·ó0H×'RMINORZ
+CODE_SMELL
+S
+java:S1451"&Add or update the header of this file.8ÊÀÉ·ó0HØ'RBLOCKERZ
+CODE_SMELL
+o	java:S105"EReplace all tab characters in this file by sequences of white-spaces.8ÊÀÉ·ó0HÙ'RMINORZ
+CODE_SMELL
+h
+java:S2039"0Explicitly declare the visibility for "service".(™Ñûîıÿÿÿÿ8ÊÀÉ·ó0HÚ'RMINORZ
+CODE_SMELL
+
+java:S3242!"]Use 'javax.servlet.ServletRequest' here; it is a more general type than 'HttpServletRequest'.(è‡Ê8ÊÀÉ·ó0HÛ'RMINORZ
+CODE_SMELL
+f
+java:S6212#"/Declare this local variable with "var" instead.(·“Á¹şÿÿÿÿ8ÊÀÉ·ó0HÜ'RINFOZ
+CODE_SMELL
+f
+java:S6212$"/Declare this local variable with "var" instead.(ì¤Üûÿÿÿÿ8ÊÀÉ·ó0Hİ'RINFOZ
+CODE_SMELL
+k	java:S106%"9Replace this use of System.out or System.err by a logger.(¨Áƒİ8ÊÀÉ·ó0HŞ'RMAJORZ
+CODE_SMELL
+a
+java:S6212&"/Declare this local variable with "var" instead.(Ÿˆ¬Ä8ÊÀÉ·ó0Hß'RINFOZ
+CODE_SMELL
+f
+java:S6212*"/Declare this local variable with "var" instead.(“ŸÌ–üÿÿÿÿ8ÊÀÉ·ó0Hà'RINFOZ
+CODE_SMELL
+
+java:S32421"]Use 'javax.servlet.ServletRequest' here; it is a more general type than 'HttpServletRequest'.(Á˜üÆ8ÊÀÉ·ó0Há'RMINORZ
+CODE_SMELL
+f
+java:S62123"/Declare this local variable with "var" instead.(“ŸÌ–üÿÿÿÿ8ÊÀÉ·ó0Hâ'RINFOZ
+CODE_SMELL
+j
+java:S11088"2Move this "catch" keyword to a new dedicated line.(ãÎÌŞıÿÿÿÿ8ÊÀÉ·ó0Hã'RMINORZ
+CODE_SMELL
+f
+java:S62125"/Declare this local variable with "var" instead.(¸£»úÿÿÿÿ8ÊÀÉ·ó0Hä'RINFOZ
+CODE_SMELL
+
+java:S3242B"]Use 'javax.servlet.ServletRequest' here; it is a more general type than 'HttpServletRequest'.(¼Ÿ«8ÊÀÉ·ó0Hå'RMINORZ
+CODE_SMELL
+f
+java:S6212F"/Declare this local variable with "var" instead.(“ŸÌ–üÿÿÿÿ8ÊÀÉ·ó0Hæ'RINFOZ
+CODE_SMELL
+•
+java:S3242M"]Use 'javax.servlet.ServletRequest' here; it is a more general type than 'HttpServletRequest'.(üÄ—åúÿÿÿÿ8ÊÀÉ·ó0Hç'RMINORZ
+CODE_SMELL
+a
+java:S6212O"/Declare this local variable with "var" instead.( ŞÌ²8ÊÀÉ·ó0Hè'RINFOZ
+CODE_SMELL
+f
+java:S6212R"/Declare this local variable with "var" instead.(“ŸÌ–üÿÿÿÿ8ÊÀÉ·ó0Hé'RINFOZ
+CODE_SMELL
+j
+java:S1108W"2Move this "catch" keyword to a new dedicated line.(¨‰âèıÿÿÿÿ8ÊÀÉ·ó0Hê'RMINORZ
+CODE_SMELL
+f
+java:S6212T"/Declare this local variable with "var" instead.(Ù–õ†ÿÿÿÿÿ8ÊÀÉ·ó0Hë'RINFOZ
+CODE_SMELL
+•
+java:S3242`"]Use 'javax.servlet.ServletRequest' here; it is a more general type than 'HttpServletRequest'.(ùÀª¢ùÿÿÿÿ8ÊÀÉ·ó0Hì'RMINORZ
+CODE_SMELL
+a
+java:S6212f"/Declare this local variable with "var" instead.( ŞÌ²8ÊÀÉ·ó0Hí'RINFOZ
+CODE_SMELL
+k	java:S106h"9Replace this use of System.out or System.err by a logger.(ÆÀûı8ÊÀÉ·ó0Hî'RMAJORZ
+CODE_SMELL
+f
+java:S6212m"/Declare this local variable with "var" instead.(µ´ıÿÿÿÿ8ÊÀÉ·ó0Hï'RINFOZ
+CODE_SMELL
+f
+java:S6212r"/Declare this local variable with "var" instead.(ïï²Òøÿÿÿÿ8ÊÀÉ·ó0Hğ'RINFOZ
+CODE_SMELL
+f
+java:S6212w"/Declare this local variable with "var" instead.(Š¡øòıÿÿÿÿ8ÊÀÉ·ó0Hñ'RINFOZ
+CODE_SMELL
+f
+java:S6212|"/Declare this local variable with "var" instead.(ş´á¾ÿÿÿÿÿ8ÊÀÉ·ó0Hò'RINFOZ
+CODE_SMELL
+b
+java:S6212"/Declare this local variable with "var" instead.(Èø›8ÊÀÉ·ó0Hó'RINFOZ
+CODE_SMELL
+g
+java:S6212‹"/Declare this local variable with "var" instead.(Õùóìıÿÿÿÿ8ÊÀÉ·ó0Hô'RINFOZ
+CODE_SMELL
+q	java:S106‘"9Replace this use of System.out or System.err by a logger.(¾÷Êüøÿÿÿÿ8ÊÀÉ·ó0Hõ'RMAJORZ
+CODE_SMELL
+g
+java:S6212“"/Declare this local variable with "var" instead.(“ŸÌ–üÿÿÿÿ8ÊÀÉ·ó0Hö'RINFOZ
+CODE_SMELL
+k
+java:S1108™"2Move this "catch" keyword to a new dedicated line.(¨‰âèıÿÿÿÿ8ÊÀÉ·ó0H÷'RMINORZ
+CODE_SMELL
+g
+java:S6212–"/Declare this local variable with "var" instead.(Ù–õ†ÿÿÿÿÿ8ÊÀÉ·ó0Hø'RINFOZ
+CODE_SMELL
+g
+java:S6212£"/Declare this local variable with "var" instead.(“ŸÌ–üÿÿÿÿ8ÊÀÉ·ó0Hù'RINFOZ
+CODE_SMELL
+–
+java:S3242©"]Use 'javax.servlet.ServletRequest' here; it is a more general type than 'HttpServletRequest'.(§Í»‰ÿÿÿÿÿ8ÊÀÉ·ó0Hú'RMINORZ
+CODE_SMELL
+g
+java:S6212¬"/Declare this local variable with "var" instead.(“ŸÌ–üÿÿÿÿ8ÊÀÉ·ó0Hû'RINFOZ
+CODE_SMELL
+ì
+java:S4605"µ'AdminController' is not reachable by @ComponentScan or @SpringBootApplication. Either move it to a package configured in @ComponentScan or update your @ComponentScan configuration.(î¬’Ì8ÊÀÉ·ó0Hü'RCRITICALZ
 CODE_SMELL

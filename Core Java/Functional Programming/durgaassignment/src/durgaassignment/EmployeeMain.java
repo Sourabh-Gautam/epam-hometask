@@ -1,4 +1,4 @@
-tpackage durgaassignment;
+package durgaassignment;
 
 import java.util.DoubleSummaryStatistics;
 import java.util.List;

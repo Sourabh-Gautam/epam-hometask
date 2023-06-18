@@ -1,0 +1,39 @@
+-----------------------------------------------------------
+Stream creation methods
+-----------------------------------------------------------
+
+empty();
+
+builder();
+
+of(T t);
+
+ofNullable(T t);
+
+of(T... values);
+
+concat(Stream<? extends T> a, Stream<? extends T> b);
+
+generate(Supplier<? extends T> s);
+
+limit(long maxSize);
+
+forEach(Consumer<? super T> action);
+
+-----------------------------------------------------------
+Conversion methods
+-----------------------------------------------------------
+
+mapToInt(ToIntFunction<? super T> mapper);
+
+mapToLong(ToLongFunction<? super T> mapper);
+
+mapToDouble(ToDoubleFunction<? super T> mapper);
+
+toArray();
+
+toArray(IntFunction<A[]> generator);
+
+toList(); //from java 16
+
+collect(Collector<? super T, A, R> collector);

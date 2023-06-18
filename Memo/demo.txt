@@ -1,0 +1,1 @@
+Core Java was designed to be easy to use and is therefore easy to write, compile, debug, and learn than other programming languages. Core Java is object-oriented. This allows you to create modular programs and reusable code. Core Java is platform-independent.

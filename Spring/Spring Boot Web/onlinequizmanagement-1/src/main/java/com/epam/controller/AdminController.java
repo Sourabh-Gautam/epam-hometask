@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.epam.entity.Option;
 import com.epam.entity.Question;
@@ -31,6 +32,7 @@ public class AdminController {
 
 	@PostMapping("/createquiz")
 	public ModelAndView createQuiz(HttpServletRequest request) {
+		System.out.println("Hello from quiz cretion");
 		String quizTitle = request.getParameter("quizname");
 		Quiz quiz = Quiz.builder().quizTitle(quizTitle).build();
 		Quiz quizdb = service.createQuiz(quiz);
